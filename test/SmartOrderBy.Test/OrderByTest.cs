@@ -74,7 +74,8 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderBy(x => x.Books.FirstOrDefault()!.Id);
 
             //Assert
-            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Id == result.SelectMany(x => x.Books).FirstOrDefault()!.Id);
+            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Id ==
+                        result.SelectMany(x => x.Books).FirstOrDefault()!.Id);
         }
 
         [Fact]
@@ -95,7 +96,8 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderByDescending(x => x.Books.FirstOrDefault()!.Id);
 
             //Assert
-            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Id == result.SelectMany(x => x.Books).FirstOrDefault()!.Id);
+            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Id ==
+                        result.SelectMany(x => x.Books).FirstOrDefault()!.Id);
         }
 
         [Fact]
@@ -116,7 +118,8 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderBy(x => x.Books.FirstOrDefault()!.Author.Age);
 
             //Assert
-            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Age == result.SelectMany(x => x.Books).FirstOrDefault()!.Author.Age);
+            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Age ==
+                        result.SelectMany(x => x.Books).FirstOrDefault()!.Author.Age);
         }
 
         [Fact]
@@ -137,7 +140,8 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderByDescending(x => x.Books.FirstOrDefault()!.Author.Age);
 
             //Assert
-            Assert.True(smartResult.SelectMany(x => x.Books).Select(x => x.Author).FirstOrDefault()!.Age == result.SelectMany(x => x.Books).Select(x => x.Author).FirstOrDefault()!.Age);
+            Assert.True(smartResult.SelectMany(x => x.Books).Select(x => x.Author).FirstOrDefault()!.Age ==
+                        result.SelectMany(x => x.Books).Select(x => x.Author).FirstOrDefault()!.Age);
         }
 
         [Fact]
@@ -158,7 +162,8 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderBy(x => x.Books.FirstOrDefault()!.Author.Country.Name);
 
             //Assert
-            Assert.True(smartResult.SelectMany(x => x.Books).Select(b => b.Author).Select(a => a.Country).FirstOrDefault()!.Name == result.SelectMany(x => x.Books).Select(b => b.Author).Select(a => a.Country).FirstOrDefault()!.Name);
+            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name ==
+                        result.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name);
         }
 
         [Fact]
@@ -179,7 +184,8 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderByDescending(x => x.Books.FirstOrDefault()!.Author.Country.Name);
 
             //Assert
-            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name == result.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name);
+            Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name ==
+                        result.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name);
         }
 
         [Fact]
@@ -200,7 +206,30 @@ namespace SmartOrderBy.Test
             var result = _publishers.OrderBy(x => x.MainAuthor.Languages.FirstOrDefault()!.Id);
 
             //Assert
-            Assert.True(smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id == smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id);
+            Assert.True(smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id ==
+                        smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id);
+        }
+
+        [Fact]
+        public void SmartOrderBy_Should_Return_Results_Order_By_Descending_By_Language_Id()
+        {
+            //Arrange
+            PublisherRequest request = new()
+            {
+                OrderBy = new Sorting
+                {
+                    Name = "lanId",
+                    OrderType = "desc"
+                }
+            };
+
+            //Act
+            var smartResult = _publishers.OrderBy(request.OrderBy);
+            var result = _publishers.OrderByDescending(x => x.MainAuthor.Languages.FirstOrDefault()!.Id);
+
+            //Assert
+            Assert.True(smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id ==
+                        smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id);
         }
 
         [Fact]
