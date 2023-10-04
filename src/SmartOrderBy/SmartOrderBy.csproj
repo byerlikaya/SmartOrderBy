@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ 
+  <PropertyGroup>
+    <PackageId>SmartOrderBy</PackageId>
+    <Version>1.0.0-rc2</Version>
+    <Authors>Barış Yerlikaya</Authors>
+    <Company>Barış Yerlikaya</Company>
+    <Product>SmartOrderBy</Product>
+    <Title>SmartOrderBy</Title>
+    <Description>It intelligently sorts a sequence of items in a simple and practical way.</Description>
+    <Copyright>Copyright (c) 2023 Barış Yerlikaya</Copyright>
+    <!--<PackageReadmeFile>README.md</PackageReadmeFile>-->
+    <!--<RepositoryUrl>https://github.com/byerlikaya/SmartOrderBy</RepositoryUrl>-->
+    <PackageTags>order sorting orderby thenby smartorderby netcore smart</PackageTags>
+    <!--<PackageProjectUrl>https://github.com/byerlikaya/SmartOrderBy#smartorderby</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>-->
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+</Project>
