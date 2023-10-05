@@ -23,6 +23,19 @@ PM> Install-Package SmartOrderBy
 ```csharp
 public Sorting OrderBy { get; set; }
 ```
+The structure of the Sorting object;
+```csharp
+public class Sorting
+{
+    public string Name { get; set; }
+    public string OrderType { get; set; }
+}
+```
+`Name` => The name of the field to be sorted.
+
+`OrderType` => The type of the order. 
+It can be specified as "asc", "ascending", "a" or "desc", "descending", "d".
+
 3. And we sort intelligently. And that's it.
 
 ```csharp
