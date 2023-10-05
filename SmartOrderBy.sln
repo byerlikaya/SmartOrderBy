@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Common", "sample\Sam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartOrderBy.Test", "test\SmartOrderBy.Test\SmartOrderBy.Test.csproj", "{BBB71407-CBC4-4176-A95C-04A39A4725C7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Api", "sample\Sample.Api\Sample.Api.csproj", "{1C1BF2F5-CFEC-40C8-9CC4-B3679E217DA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BBB71407-CBC4-4176-A95C-04A39A4725C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB71407-CBC4-4176-A95C-04A39A4725C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBB71407-CBC4-4176-A95C-04A39A4725C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C1BF2F5-CFEC-40C8-9CC4-B3679E217DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1BF2F5-CFEC-40C8-9CC4-B3679E217DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1BF2F5-CFEC-40C8-9CC4-B3679E217DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1BF2F5-CFEC-40C8-9CC4-B3679E217DA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
