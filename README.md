@@ -44,12 +44,12 @@ If you want to specify the name of the field you want to sort differently from t
 
 👉 You can access the sample domain structure [here](https://github.com/byerlikaya/SmartOrderBy/tree/main/sample/Sample.Common/Entity). 👈
 
-For example, if you want to make a sorting with the name bookId according to the Id field of the Book entity in Publisher, you will need to make a mapping as follows.
+For example, if you want to make a sorting with the name `bookId` according to the Id field of the `Book` entity in `Publisher`, you will need to make a mapping as follows.
 
 ```csharp
 OrderByMapper.Map<Publisher, Book>("bookId", x => x.Id);
 ```
-Or if you want to make a sort with the authorAge name according to the Age field of the Author entity in the Book entity in Publisher;
+Or if you want to make a sort with the `authorAge` name according to the Age field of the `Author` entity in the Book entity in `Publisher`;
 
 ```csharp
 OrderByMapper.Map<Publisher, Book, Author>("authorAge", x => x.Age);
