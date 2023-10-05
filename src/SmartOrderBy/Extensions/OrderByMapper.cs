@@ -39,11 +39,12 @@ namespace SmartOrderBy.Extensions
             {
                 var orderByMap = MapList.FirstOrDefault(x => x.EntityName == mainEntity);
 
-                orderByMap!.Maps.Add(new Map
-                {
-                    Key = key,
-                    Mapping = $"{map}.{memberName}"
-                });
+                if (orderByMap!.Maps.All(x => x.Key != key))
+                    orderByMap.Maps.Add(new Map
+                    {
+                        Key = key,
+                        Mapping = $"{map}.{memberName}"
+                    });
             }
             else
             {
