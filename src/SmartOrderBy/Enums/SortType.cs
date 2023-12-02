@@ -1,8 +1,7 @@
-﻿namespace SmartOrderBy.Enums
+﻿namespace SmartOrderBy.Enums;
+
+public enum SortType
 {
-    public enum SortType
-    {
-        ASC,
-        DESC
-    }
+    ASC,
+    DESC
 }

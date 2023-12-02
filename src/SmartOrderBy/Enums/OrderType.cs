@@ -1,8 +1,7 @@
-﻿namespace SmartOrderBy.Enums
+﻿namespace SmartOrderBy.Enums;
+
+public enum OrderType
 {
-    public enum OrderType
-    {
-        Order = 1,
-        Then = 2
-    }
+    Order = 1,
+    Then = 2
 }

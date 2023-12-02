@@ -1,8 +1,7 @@
-﻿namespace SmartOrderBy.Dtos
+﻿namespace SmartOrderBy.Dtos;
+
+public class Sorting
 {
-    public class Sorting
-    {
-        public string Name { get; set; }
-        public string OrderType { get; set; }
-    }
+    public string Name { get; set; }
+    public string OrderType { get; set; }
 }

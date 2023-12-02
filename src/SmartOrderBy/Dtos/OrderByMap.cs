@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
+﻿namespace SmartOrderBy.Dtos;
 
-namespace SmartOrderBy.Dtos
+public class OrderByMap
 {
-    public class OrderByMap
-    {
-        public string EntityName { get; set; }
+    public string EntityName { get; set; }
 
-        public List<Map> Maps { get; set; }
-    }
+    public List<Map> Maps { get; set; }
 }
