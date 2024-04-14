@@ -46,7 +46,7 @@ public static class SmartOrderBy
 
                     var propertyExp = Expression.Property((Expression)expression ?? parameterExpression, propertyInfo.propertyInfo.Name);
 
-                    firstOrDefaultExpression = Expression.Call(typeof(Enumerable), "FirstOrDefault", new[] { propertyType }, propertyExp);
+                    firstOrDefaultExpression = Expression.Call(typeof(Enumerable), "FirstOrDefault", [propertyType], propertyExp);
 
                     if (propertyList.Count == index)
                         break;
@@ -87,11 +87,7 @@ public static class SmartOrderBy
 
         var genericMethod = method.MakeGenericMethod(entityType!, propertyList.LastOrDefault()!.propertyType);
 
-        var newQuery = (IOrderedQueryable<TSource>)genericMethod.Invoke(genericMethod, new object[]
-        {
-            query,
-            Expression.Lambda(expression!, parameterExpression)
-        });
+        var newQuery = (IOrderedQueryable<TSource>)genericMethod.Invoke(genericMethod, [query, Expression.Lambda(expression!, parameterExpression)]);
 
         return newQuery;
     }

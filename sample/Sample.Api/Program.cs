@@ -1,6 +1,3 @@
-using Sample.Api;
-using Sample.Api.ApplicationSpecific.Contexts;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

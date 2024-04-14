@@ -1,8 +1,7 @@
-﻿namespace Sample.Common.Entity
+﻿namespace Sample.Common.Entity;
+
+public class Language
 {
-    public class Language
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+    public int Id { get; set; }
+    public string Name { get; set; }
 }
