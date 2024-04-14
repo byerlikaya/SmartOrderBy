@@ -1,9 +1,6 @@
-﻿using SmartOrderBy.Dtos;
+﻿namespace Sample.Common.Dto;
 
-namespace Sample.Common.Dto
+public class BookSearchRequest
 {
-    public class BookSearchRequest
-    {
-        public Sorting OrderBy { get; set; }
-    }
+    public Sorting OrderBy { get; set; }
 }

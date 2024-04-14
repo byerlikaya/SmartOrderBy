@@ -1,12 +1,9 @@
-﻿using SmartOrderBy.Dtos;
+﻿namespace Sample.Common.Dto;
 
-namespace Sample.Common.Dto
+public class PublisherRequest
 {
-    public class PublisherRequest
-    {
-        public Sorting OrderBy { get; set; }
+    public Sorting OrderBy { get; set; }
 
-        public Sorting ThenBy { get; set; }
+    public Sorting ThenBy { get; set; }
 
-    }
 }
