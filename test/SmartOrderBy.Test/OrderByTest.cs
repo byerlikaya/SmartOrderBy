@@ -11,7 +11,6 @@ namespace SmartOrderBy.Test
             OrderByMapper.Map<Publisher, Book>("bookId", x => x.Id);
             OrderByMapper.Map<Publisher, Book, Author>("authorAge", x => x.Age);
             OrderByMapper.Map<Publisher, Book, Author, Country>("countryName", x => x.Name);
-
             OrderByMapper.Map<Publisher, Author, Language>("lanId", x => x.Id);
         }
 
