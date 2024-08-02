@@ -1,10 +1,10 @@
 namespace SmartOrderBy.Test;
 
-public class OrderByTest
+public class OrderByQueryableTest
 {
-    private readonly IQueryable<Publisher> _publishers = DataInitializer.FillMockData();
+    private readonly IQueryable<Publisher> _publishersQuery = DataInitializer.FillMockDataQuery();
 
-    public OrderByTest()
+    public OrderByQueryableTest()
     {
         OrderByMapper.Map<Publisher, Book>("bookId", x => x.Id);
         OrderByMapper.Map<Publisher, Book, Author>("authorAge", x => x.Age);
@@ -27,10 +27,10 @@ public class OrderByTest
         };
 
         //Act
-        var result = _publishers.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderBy(request.OrderBy);
 
         //Assert
-        Assert.True(result.FirstOrDefault()!.Id == 1);
+        Assert.Equal(1, result.FirstOrDefault()!.Id);
     }
 
     [Fact]
@@ -47,10 +47,10 @@ public class OrderByTest
         };
 
         //Act
-        var result = _publishers.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderBy(request.OrderBy);
 
         //Assert
-        Assert.True(result.FirstOrDefault()!.Id == 5);
+        Assert.Equal(5, result.FirstOrDefault()!.Id);
     }
 
     [Fact]
@@ -67,8 +67,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderBy(x => x.Books.FirstOrDefault()!.Id);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderBy(x => x.Books.FirstOrDefault()!.Id);
 
         //Assert
         Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Id ==
@@ -89,8 +89,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderByDescending(x => x.Books.FirstOrDefault()!.Id);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderByDescending(x => x.Books.FirstOrDefault()!.Id);
 
         //Assert
         Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Id ==
@@ -111,8 +111,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderBy(x => x.Books.FirstOrDefault()!.Author.Age);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderBy(x => x.Books.FirstOrDefault()!.Author.Age);
 
         //Assert
         Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Age ==
@@ -133,8 +133,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderByDescending(x => x.Books.FirstOrDefault()!.Author.Age);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderByDescending(x => x.Books.FirstOrDefault()!.Author.Age);
 
         //Assert
         Assert.True(smartResult.SelectMany(x => x.Books).Select(x => x.Author).FirstOrDefault()!.Age ==
@@ -155,8 +155,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderBy(x => x.Books.FirstOrDefault()!.Author.Country.Name);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderBy(x => x.Books.FirstOrDefault()!.Author.Country.Name);
 
         //Assert
         Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name ==
@@ -177,8 +177,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderByDescending(x => x.Books.FirstOrDefault()!.Author.Country.Name);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderByDescending(x => x.Books.FirstOrDefault()!.Author.Country.Name);
 
         //Assert
         Assert.True(smartResult.SelectMany(x => x.Books).FirstOrDefault()!.Author.Country.Name ==
@@ -199,8 +199,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderBy(x => x.MainAuthor.Languages.FirstOrDefault()!.Id);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderBy(x => x.MainAuthor.Languages.FirstOrDefault()!.Id);
 
         //Assert
         Assert.True(smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id ==
@@ -221,8 +221,8 @@ public class OrderByTest
         };
 
         //Act
-        var smartResult = _publishers.OrderBy(request.OrderBy);
-        var result = _publishers.OrderByDescending(x => x.MainAuthor.Languages.FirstOrDefault()!.Id);
+        var smartResult = _publishersQuery.OrderBy(request.OrderBy);
+        var result = _publishersQuery.OrderByDescending(x => x.MainAuthor.Languages.FirstOrDefault()!.Id);
 
         //Assert
         Assert.True(smartResult.Select(x => x.MainAuthor).SelectMany(a => a.Languages).FirstOrDefault()!.Id ==
@@ -248,12 +248,12 @@ public class OrderByTest
         };
 
         //Act
-        var result = _publishers
+        var result = _publishersQuery
             .OrderBy(request.OrderBy)
             .ThenBy(request.ThenBy);
 
         //Assert
-        Assert.True(result.FirstOrDefault()!.Id == 1);
+        Assert.Equal(1, result.FirstOrDefault()!.Id);
     }
 
     [Fact]
@@ -275,11 +275,11 @@ public class OrderByTest
         };
 
         //Act
-        var result = _publishers
+        var result = _publishersQuery
             .OrderBy(request.OrderBy)
             .ThenBy(request.ThenBy);
 
         //Assert
-        Assert.True(result.FirstOrDefault()!.Id == 5);
+        Assert.Equal(5, result.FirstOrDefault()!.Id);
     }
 }
