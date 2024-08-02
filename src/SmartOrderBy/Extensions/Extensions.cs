@@ -5,18 +5,18 @@ public static class Extensions
     public static SortType GetSortType(this string orderType)
     {
         if (string.IsNullOrEmpty(orderType))
-            return SortType.ASC;
+            return SortType.Asc;
 
         return orderType switch
         {
-            "asc" or "ascending" or "a" => SortType.ASC,
-            "desc" or "descending" or "d" => SortType.DESC,
-            _ => SortType.ASC
+            "asc" or "ascending" or "a" => SortType.Asc,
+            "desc" or "descending" or "d" => SortType.Desc,
+            _ => SortType.Asc
         };
     }
 
     internal static string GetSortType(this Sorting sorting, OrderType orderType)
-        => sorting.OrderType.GetSortType() == SortType.ASC
+        => sorting.OrderType.GetSortType() == SortType.Asc
             ? orderType == OrderType.Order
                 ? "OrderBy"
                 : "ThenBy"
@@ -90,11 +90,13 @@ public static class Extensions
     }
 
     private static (PropertyInfo propertyInfo, Type propertyType) GetPropertyInfoByType(
-        this IEnumerable<(PropertyInfo propertyInfo, Type propertyType)> entityProperties, string property) =>
+        this IEnumerable<(PropertyInfo propertyInfo, Type propertyType)> entityProperties,
+        string property) =>
         entityProperties.FirstOrDefault(x => string.Equals(x.propertyType.Name, property, StringComparison.OrdinalIgnoreCase));
 
     private static (PropertyInfo propertyInfo, Type propertyType) GetPropertyInfoByInfo(
-        this IEnumerable<(PropertyInfo propertyInfo, Type propertyType)> entityProperties, string property) =>
+        this IEnumerable<(PropertyInfo propertyInfo, Type propertyType)> entityProperties,
+        string property) =>
         entityProperties.FirstOrDefault(x => string.Equals(x.propertyInfo.Name, property, StringComparison.OrdinalIgnoreCase));
 
     private static List<(PropertyInfo propertyInfo, Type propertyType)> GetEntityProperties(Type entityType)
@@ -126,8 +128,7 @@ public static class Extensions
         }
         else
         {
-            propertyInfo = properties.propertyType
-                .GetProperty(property, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
+            propertyInfo = properties.propertyType.GetProperty(property, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
 
             if (propertyInfo.IsNull())
                 properties.propertyType

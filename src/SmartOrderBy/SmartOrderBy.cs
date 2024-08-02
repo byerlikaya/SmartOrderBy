@@ -2,13 +2,30 @@
 
 public static class SmartOrderBy
 {
-    public static IOrderedQueryable<TSource> OrderBy<TSource>(this IQueryable<TSource> query, Sorting orderBy)
+    public static IOrderedQueryable<TSource> OrderBy<TSource>(
+        this IQueryable<TSource> query,
+        Sorting orderBy)
         => Sorting(query, orderBy, OrderType.Order);
 
-    public static IOrderedQueryable<TSource> ThenBy<TSource>(this IOrderedQueryable<TSource> query, Sorting orderBy)
+    public static IOrderedQueryable<TSource> ThenBy<TSource>(
+        this IOrderedQueryable<TSource> query,
+        Sorting orderBy)
         => Sorting(query, orderBy, OrderType.Then);
 
-    private static IOrderedQueryable<TSource> Sorting<TSource>(IQueryable<TSource> query, Sorting sorting, OrderType orderType)
+    public static IEnumerable<TSource> OrderBy<TSource>(
+        this IEnumerable<TSource> enumerable,
+        Sorting orderBy)
+        => Sorting(enumerable.AsQueryable(), orderBy, OrderType.Order);
+
+    public static IEnumerable<TSource> ThenBy<TSource>(
+        this IEnumerable<TSource> enumerable,
+        Sorting orderBy)
+        => Sorting(enumerable.AsQueryable(), orderBy, OrderType.Then);
+
+    private static IOrderedQueryable<TSource> Sorting<TSource>(
+        IQueryable<TSource> query,
+        Sorting sorting,
+        OrderType orderType)
     {
         if (sorting.IsNull() || sorting.Name.IsNull())
             return query as IOrderedQueryable<TSource>;

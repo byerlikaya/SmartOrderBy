@@ -29,11 +29,11 @@ public static class OrderByMapper
 
         var memberName = selector.Body.GetMemberName();
 
-        if (MapList.Any(x => x.EntityName == mainEntity))
+        if (MapList.Exists(x => x.EntityName == mainEntity))
         {
-            var orderByMap = MapList.FirstOrDefault(x => x.EntityName == mainEntity);
+            var orderByMap = MapList.Find(x => x.EntityName == mainEntity);
 
-            if (orderByMap!.Maps.All(x => x.Key != key))
+            if (orderByMap!.Maps.TrueForAll(x => x.Key != key))
                 orderByMap.Maps.Add(new Map
                 {
                     Key = key,
@@ -45,14 +45,14 @@ public static class OrderByMapper
             MapList.Add(new OrderByMap
             {
                 EntityName = mainEntity,
-                Maps = new List<Map>
-                {
-                    new()
+                Maps =
+                [
+                    new Map
                     {
                         Key = key,
                         Mapping = $"{map}.{memberName}"
                     }
-                }
+                ]
             });
         }
     }
@@ -62,15 +62,15 @@ public static class OrderByMapper
         if (MapList.IsNullOrNotAny())
             return sorting;
 
-        if (!MapList.Any(x => x.Maps.Any(e => e.Key == sorting.Name)))
+        if (!MapList.Exists(x => x.Maps.Exists(e => e.Key == sorting.Name)))
             return sorting;
 
-        var map = MapList.FirstOrDefault(x => x.EntityName == typeof(TSource).Name && x.Maps.Any(e => e.Key == sorting.Name));
+        var map = MapList.Find(x => x.EntityName == typeof(TSource).Name && x.Maps.Exists(e => e.Key == sorting.Name));
 
         if (map.IsNull())
             return sorting;
 
-        var entityDto = map!.Maps.FirstOrDefault(x => x.Key == sorting.Name);
+        var entityDto = map!.Maps.Find(x => x.Key == sorting.Name);
 
         return new Sorting
         {
