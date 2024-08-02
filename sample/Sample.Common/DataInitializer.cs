@@ -75,11 +75,10 @@ public static class DataInitializer
 
     private static readonly List<Publisher> Publishers = [];
 
-    public static IQueryable<Publisher> FillMockData()
+    public static List<Publisher> FillMockDataList()
     {
-
-        if (Publishers.Any())
-            return Publishers.AsQueryable();
+        if (Publishers.Count != 0)
+            return Publishers;
 
         var index = 1;
 
@@ -138,6 +137,12 @@ public static class DataInitializer
         }
 
 
-        return Publishers.AsQueryable();
+        return Publishers;
     }
+
+    public static IQueryable<Publisher> FillMockDataQuery() =>
+        Publishers.Count != 0
+            ? Publishers.AsQueryable()
+            : FillMockDataList()
+                .AsQueryable();
 }

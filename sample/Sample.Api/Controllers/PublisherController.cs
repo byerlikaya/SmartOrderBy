@@ -1,6 +1,7 @@
 ﻿namespace Sample.Api.Controllers;
 
 [ApiController]
+// ReSharper disable once HollowTypeName
 public class PublisherController : ControllerBase
 {
     private readonly MemoryDbContext _context;
