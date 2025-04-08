@@ -2,13 +2,13 @@
  
   <PropertyGroup>
     <PackageId>SmartOrderBy</PackageId>
-    <Version>1.2.0</Version>
+    <Version>1.2.0.1</Version>
     <Authors>Barış Yerlikaya</Authors>
     <Company>Barış Yerlikaya</Company>
     <Product>SmartOrderBy</Product>
     <Title>SmartOrderBy</Title>
     <Description>It intelligently sorts a sequence of items in a simple and practical way.</Description>
-    <Copyright>Copyright (c) 2024 Barış Yerlikaya</Copyright>
+    <Copyright>Copyright (c) 2025 Barış Yerlikaya</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/byerlikaya/SmartOrderBy</RepositoryUrl>
     <PackageTags>order sorting orderby thenby smartorderby netcore smart</PackageTags>
