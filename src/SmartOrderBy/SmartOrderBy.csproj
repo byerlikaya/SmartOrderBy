@@ -6,22 +6,32 @@
     <Authors>Barış Yerlikaya</Authors>
     <Company>Barış Yerlikaya</Company>
     <Product>SmartOrderBy</Product>
-    <Title>SmartOrderBy</Title>
-    <Description>It intelligently sorts a sequence of items in a simple and practical way.</Description>
+    <Title>SmartOrderBy - Intelligent .NET Sorting Library</Title>
+    <Description>SmartOrderBy is a production-ready .NET library that provides intelligent sorting capabilities for IQueryable&lt;T&gt; collections. It transforms complex sorting logic into simple, declarative code using intuitive mapping and configuration, making your data access layer cleaner and more maintainable. Features include deep property navigation, attribute-based configuration, type-safe operations, and high performance expression tree generation.</Description>
     <Copyright>Copyright (c) 2025 Barış Yerlikaya</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/byerlikaya/SmartOrderBy</RepositoryUrl>
-    <PackageTags>order sorting orderby thenby smartorderby netcore smart</PackageTags>
-    <PackageProjectUrl>https://github.com/byerlikaya/SmartOrderBy#smartorderby</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>order;sorting;orderby;thenby;smartorderby;netcore;smart;entity-framework;linq;iqueryable;expression-trees;performance;dotnet;csharp</PackageTags>
+    <PackageProjectUrl>https://github.com/byerlikaya/SmartOrderBy</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.svg</PackageIcon>
+    <PackageReleaseNotes>Enhanced performance with optimized expression tree generation, improved nested property support, and comprehensive documentation.</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors>CS1591;CS8618;CS8600;CS8603;CS8634</WarningsNotAsErrors>
   </PropertyGroup>
   
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <LangVersion>latest</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   
   <ItemGroup>
