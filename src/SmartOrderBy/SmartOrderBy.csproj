@@ -15,7 +15,7 @@
     <PackageTags>order;sorting;orderby;thenby;smartorderby;netcore;smart;entity-framework;linq;iqueryable;expression-trees;performance;dotnet;csharp</PackageTags>
     <PackageProjectUrl>https://github.com/byerlikaya/SmartOrderBy</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageIcon>icon.svg</PackageIcon>
+    <!-- <PackageIcon>icon.svg</PackageIcon> -->
     <PackageReleaseNotes>Enhanced performance with optimized expression tree generation, improved nested property support, and comprehensive documentation.</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -27,7 +27,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <WarningsNotAsErrors>CS1591;CS8618;CS8600;CS8603;CS8634</WarningsNotAsErrors>
+    <WarningsNotAsErrors>CS1591;CS8618;CS8600;CS8603;CS8634;CS0656;CS8618;CS8600;CS8603;CS8634</WarningsNotAsErrors>
+    <NoWarn>CS1591;CS8618;CS8600;CS8603;CS8634;CS0656</NoWarn>
   </PropertyGroup>
   
   <PropertyGroup>
