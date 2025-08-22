@@ -57,8 +57,8 @@ docs/
 
 - **🐛 Bug Reports**: [GitHub Issues](https://github.com/byerlikaya/SmartOrderBy/issues)
 - **💬 Discussions**: [GitHub Discussions](https://github.com/byerlikaya/SmartOrderBy/discussions)
-- **📧 Contact**: [Email](mailto:contact@example.com)
-- **🔗 LinkedIn**: [Barış Yerlikaya](https://linkedin.com/in/byerlikaya)
+- **📧 Contact**: [Email](mailto:b.yerlikaya@outlook.com)
+- **🔗 LinkedIn**: [Barış Yerlikaya](https://linkedin.com/in/barisyerlikaya)
 
 ## 📖 Contributing to Documentation
 
