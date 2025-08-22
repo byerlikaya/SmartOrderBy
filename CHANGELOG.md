@@ -7,19 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2025-08-22
+
 ### Added
-- Enhanced CI/CD pipeline with security scanning
-- Code coverage reporting
-- Dependency review automation
-- Comprehensive documentation
+- Enhanced project file with professional package metadata
+- Professional SVG package icon representing OrderBy operations
+- Improved CI/CD pipeline with .NET 9.0 SDK support
+- Better package description and tags for better discoverability
+- Symbol package support (snupkg) for debugging
+- Enhanced release notes and package information
+- Support for IncludeSymbols and PublishRepositoryUrl
 
 ### Changed
-- Updated to .NET 9.0
-- Improved build and test processes
-- Enhanced error handling and validation
+- Updated package tags for better SEO and discoverability
+- Enhanced package description with comprehensive feature list
+- Improved project file structure and organization
 
-### Fixed
-- Various bug fixes and improvements
+## [1.2.0.1] - 2025-04-08
 
 ## [1.2.0.1] - 2025-04-08
 
@@ -89,7 +93,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
-- **1.2.0.1**: Current stable release with enhanced features
+- **1.2.1**: Current stable release with enhanced package metadata and professional icon
+- **1.2.0.1**: Enhanced features with complex nested property sorting
 - **1.1.0**: Performance improvements and bug fixes
 - **1.0.0**: First stable release with full functionality
 - **0.9.0**: Beta release for community testing
