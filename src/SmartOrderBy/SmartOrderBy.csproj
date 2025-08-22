@@ -14,11 +14,14 @@
     <PackageTags>order sorting orderby thenby smartorderby netcore smart</PackageTags>
     <PackageProjectUrl>https://github.com/byerlikaya/SmartOrderBy#smartorderby</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   
   <ItemGroup>
